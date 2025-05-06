@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Streaming con Particles</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: Arial, sans-serif;
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 80%;
+            height: 70vh;
+            margin: 5% auto;
+            z-index: 2;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            z-index: 2;
+            position: relative;
+            text-shadow: 0 0 10px cyan;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎥 LIVE STREAMING DI YOUSSEF 🎆</h1>
+    
+    <div class="video-container">
+        <iframe 
+            src="https://ok.ru/videoembed/9848528510479?autoplay=1" 
+            allow="autoplay" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    
+    <div id="particles-js"></div>
+    
+    <!-- Script per Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#00ffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#00ffff", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "repulse": { "distance": 100, "duration": 0.4 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
